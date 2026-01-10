@@ -1,10 +1,42 @@
 {
   "project": "Rare Pigeons",
-  "website": "https://t.me/+cehyDYMCcLIzNzIy",
+  "website": "https://t.me/+cehyDYMCcLzNzIy",
   "cards": [
     {
       "asset": "MADUROPIGEON",
-      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon000.png"
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon000.png"
+    },
+    {
+      "asset": "RAREPIGEON",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon001.png"
+    },
+    {
+      "asset": "NAKAPIGEON",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon002.png"
+    },
+    {
+      "asset": "EXITBIRD",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon003.png"
+    },
+    {
+      "asset": "BREADWHALE",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon004.png"
+    },
+    {
+      "asset": "ORDIMSG",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon005.png"
+    },
+    {
+      "asset": "FAKERAREO",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon006.png"
+    },
+    {
+      "asset": "CEMHODLER",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon007.png"
+    },
+    {
+      "asset": "FLOORLOOK",
+      "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon008.png"
     }
   ]
 }
