@@ -37,6 +37,46 @@
     {
       "asset": "FLOORLOOK",
       "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon008.png"
-    }
+    },
+    {
+  "asset": "FOMOPIJO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon009.png"
+},
+{
+  "asset": "TRASHRICH",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon010.png"
+},
+{
+  "asset": "PUMPNOAT",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon011.png"
+},
+{
+  "asset": "RAGESELL",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon012.png"
+},
+{
+  "asset": "POCKETOAT",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon013.png"
+},
+{
+  "asset": "NOOTHODL",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon014.png"
+},
+{
+  "asset": "MOONFLYER",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon015.png"
+},
+{
+  "asset": "MORNINGREK",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pigeon016.png"
+},
+{
+  "asset": "PGNSACRIFICE",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/pgnsacrifice.png"
+},
+{
+  "asset": "JDOGPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/images/jdogpigeon.png"
+}
   ]
 }
