@@ -1,6 +1,6 @@
 {
   "project": "Rare Pigeons",
-  "website": "https://t.me/+cehyDYMCcLzNzIy",
+  "website": "https://www.rarepigeons.com",
   "cards": [
     {
       "asset": "MADUROPIGEON",
@@ -77,6 +77,27 @@
     {
       "asset": "JDOGPIGEON",
       "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/jdogpigeon.png"
-    }
+    },
+{
+  "asset": "UPONLYJO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon017.png"
+},
+{
+  "asset": "PIGEONCORN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon018.png"
+},
+{
+  "asset": "SECRETPJO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon019.png"
+},
+{
+  "asset": "TETHEREDPGON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon020.png"
+},
+{
+  "asset": "DESTROYERPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon021.png"
+}
+
   ]
 }
