@@ -97,7 +97,14 @@
 {
   "asset": "DESTROYERPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeon021.png"
+},
+{
+  "asset": "PENPENGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/PENPENGEON.png"
+},
+{
+  "asset": "LFGSWARM",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/LFGSWARM.png"
 }
-
   ]
 }
