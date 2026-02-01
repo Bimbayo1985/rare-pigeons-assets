@@ -105,6 +105,10 @@
 {
   "asset": "LFGSWARM",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/LFGSWARM.png"
+},
+    {
+  "asset": "PIGEONPOPO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C01.gif"
 }
   ]
 }
