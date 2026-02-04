@@ -109,6 +109,18 @@
     {
   "asset": "PIGEONPOPO",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C01.gif"
+},
+{
+  "asset": "SNOOPPIJO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C02.png"
+},
+{
+  "asset": "PIGEONLAYERS",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C03.png"
+},
+{
+  "asset": "GMOPIGEONS",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C04.jpg"
 }
   ]
 }
