@@ -121,6 +121,14 @@
 {
   "asset": "GMOPIGEONS",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C04.jpg"
+},
+{
+  "asset": "PIGEONPOLICE",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C05.png"
+},
+{
+  "asset": "RAREDEXBIRD",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C06.jpg"
 }
   ]
 }
