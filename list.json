@@ -129,6 +129,22 @@
 {
   "asset": "RAREDEXBIRD",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C06.jpg"
+},
+{
+  "asset": "PIGEONSHIT",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C07.png"
+},
+{
+  "asset": "DDAF",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C08.jpeg"
+},
+{
+  "asset": "DJPIJO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C09.png"
+},
+{
+  "asset": "FLIGHTCLUB",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C10.png"
 }
   ]
 }
