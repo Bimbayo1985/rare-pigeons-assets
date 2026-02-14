@@ -145,6 +145,22 @@
 {
   "asset": "FLIGHTCLUB",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C10.png"
+},
+{
+  "asset": "PIGEONCLAP",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C11.png"
+},
+{
+  "asset": "PGNMASON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C12.png"
+},
+{
+  "asset": "FAKEPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C13.png"
+},
+{
+  "asset": "XCHAINPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C14.png"
 }
   ]
 }
