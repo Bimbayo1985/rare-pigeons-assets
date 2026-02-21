@@ -177,6 +177,30 @@
 {
   "asset": "PIGEONFATHER",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C18.png"
+},
+{
+  "asset": "PIGEONMASTER",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C19.png"
+},
+{
+  "asset": "PLANEPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C20.png"
+},
+{
+  "asset": "PGNSTRIKE",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS2C21.png"
+},
+{
+  "asset": "THEARCHIVIST",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S2GOLD.png"
+},
+{
+  "asset": "THEINDEXER",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S2SILVER.png"
+},
+{
+  "asset": "THEGATHERER",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S2WOOD.png"
 }
   ]
 }
