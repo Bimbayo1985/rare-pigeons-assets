@@ -201,6 +201,38 @@
 {
   "asset": "THEGATHERER",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S2WOOD.png"
+},
+{
+  "asset": "GALLERYPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists00.png"
+},
+{
+  "asset": "DALIPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists01.png"
+},
+{
+  "asset": "PICASSOPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists02.png"
+},
+{
+  "asset": "VANGOGHPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists03.png"
+},
+{
+  "asset": "HOKUSAIPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists04.png"
+},
+{
+  "asset": "MUNCHPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists05.png"
+},
+{
+  "asset": "MAGRITTEPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists06.png"
+},
+{
+  "asset": "DARGERPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists07.png"
 }
   ]
 }
