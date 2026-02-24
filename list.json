@@ -233,6 +233,14 @@
 {
   "asset": "DARGERPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists07.png"
+},
+{
+  "asset": "DAVINCIPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists08.png"
+},
+{
+  "asset": "REMBRANDTPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists09.png"
 }
   ]
 }
