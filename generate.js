@@ -3,32 +3,20 @@ const fs = require("fs");
 
 async function getHolders(asset) {
   try {
-    const url = `https://tokenscan.io/asset/${asset}?start=0&length=100&action=first`;
+    const url = `https://tokenscan.io/explorer/holders/${asset}?start=0&length=100&action=first`;
 
     const { data } = await axios.get(url, {
       headers: {
         "User-Agent": "Mozilla/5.0",
-        "X-Requested-With": "XMLHttpRequest"
+        "Accept": "application/json"
       }
     });
 
-    // data.data — це масив рядків таблиці
-    const rows = data.data || [];
-    const holders = [];
-
-    for (const row of rows) {
-      const quantity = parseFloat(row[2]); // колонка Quantity
-      const address = row[4];              // колонка Address
-
-      if (address && quantity > 0) {
-        holders.push({ address, quantity });
-      }
-    }
-
-    return holders;
+    // data is expected as an object with data rows
+    return data.data || [];
 
   } catch (e) {
-    console.log("Failed for", asset);
+    console.log("Failed for", asset, "->", e.message);
     return [];
   }
 }
@@ -44,17 +32,25 @@ async function run() {
   const addressMap = {};
 
   for (const asset of assets) {
+
     console.log("Processing", asset);
 
     const holders = await getHolders(asset);
 
-    for (const holder of holders) {
-      if (!addressMap[holder.address]) {
-        addressMap[holder.address] = new Set();
+    for (const row of holders) {
+      // row is an array like [ #, percentage, qty, ..., address, ... ]
+      const address = row[4];
+      const quantity = parseFloat(row[2]);
+
+      if (address && quantity > 0) {
+        if (!addressMap[address]) {
+          addressMap[address] = new Set();
+        }
+        addressMap[address].add(asset);
       }
-      addressMap[holder.address].add(asset);
     }
 
+    // small pause so we don't get blocked
     await new Promise(r => setTimeout(r, 300));
   }
 
