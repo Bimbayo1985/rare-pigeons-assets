@@ -10,16 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - run: npm init -y
-      - run: npm install axios cheerio
+      - name: Init npm
+        run: npm init -y
 
-      - run: node generate.js
+      - name: Install dependencies
+        run: npm install axios@1.6.8 cheerio@1.0.0-rc.12
+
+      - name: Run generator
+        run: node generate.js
 
       - name: Commit leaderboard
         run: |
