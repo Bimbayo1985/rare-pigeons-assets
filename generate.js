@@ -1,33 +1,29 @@
 const axios = require("axios");
-const cheerio = require("cheerio");
 const fs = require("fs");
 
 async function getHolders(asset) {
   try {
-    const url = `https://tokenscan.io/asset/${asset}?tab=holders`;
+    const url = `https://tokenscan.io/asset/${asset}?start=0&length=100&action=first`;
 
     const { data } = await axios.get(url, {
       headers: {
-        "User-Agent": "Mozilla/5.0"
+        "User-Agent": "Mozilla/5.0",
+        "X-Requested-With": "XMLHttpRequest"
       }
     });
 
-    const $ = cheerio.load(data);
+    // data.data — це масив рядків таблиці
+    const rows = data.data || [];
     const holders = [];
 
-    $("table tbody tr").each((i, row) => {
-      const cols = $(row).find("td");
+    for (const row of rows) {
+      const quantity = parseFloat(row[2]); // колонка Quantity
+      const address = row[4];              // колонка Address
 
-      const quantity = $(cols[2]).text().trim();
-      const address = $(cols[4]).text().trim();
-
-      if (address && quantity) {
-        holders.push({
-          address,
-          quantity: parseFloat(quantity)
-        });
+      if (address && quantity > 0) {
+        holders.push({ address, quantity });
       }
-    });
+    }
 
     return holders;
 
@@ -53,15 +49,13 @@ async function run() {
     const holders = await getHolders(asset);
 
     for (const holder of holders) {
-      if (holder.quantity > 0) {
-        if (!addressMap[holder.address]) {
-          addressMap[holder.address] = new Set();
-        }
-        addressMap[holder.address].add(asset);
+      if (!addressMap[holder.address]) {
+        addressMap[holder.address] = new Set();
       }
+      addressMap[holder.address].add(asset);
     }
 
-    await new Promise(r => setTimeout(r, 500));
+    await new Promise(r => setTimeout(r, 300));
   }
 
   const leaderboard = Object.entries(addressMap)
