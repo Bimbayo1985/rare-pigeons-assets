@@ -9,24 +9,38 @@ function sleep(ms) {
 
 async function getBalances(asset) {
   try {
-    const response = await axios.post(RPC_URL, {
-      method: "get_balances",
-      params: {
-        filters: [
-          { field: "asset", op: "==", value: asset }
-        ],
-        filterop: "and"
+    const response = await axios.post(
+      RPC_URL,
+      {
+        method: "get_balances",
+        params: {
+          filters: [
+            { field: "asset", op: "==", value: asset }
+          ],
+          filterop: "and",
+          limit: 1000
+        },
+        jsonrpc: "2.0",
+        id: 0
       },
-      jsonrpc: "2.0",
-      id: 0
-    }, {
-      headers: { "Content-Type": "application/json" }
-    });
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
+
+    console.log("RPC RESPONSE FOR", asset);
+    console.log(JSON.stringify(response.data));
+
+    if (response.data.error) {
+      console.log("RPC ERROR:", response.data.error);
+      return [];
+    }
 
     return response.data.result || [];
 
   } catch (e) {
-    console.log("RPC error:", asset);
+    console.log("RPC FAIL:", asset);
+    console.log(e.response?.data || e.message);
     return [];
   }
 }
@@ -60,7 +74,7 @@ async function run() {
       }
     }
 
-    await sleep(500); // щоб не злити RPC
+    await sleep(500);
   }
 
   const leaderboard = Object.entries(addressMap)
