@@ -1,52 +1,66 @@
 const axios = require("axios");
 const fs = require("fs");
 
+async function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
 async function run() {
 
-  const listUrl = "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json";
-  const listRes = await axios.get(listUrl);
+  const list = await axios.get(
+    "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json"
+  );
 
-  const assets = Array.isArray(listRes.data)
-    ? listRes.data.map(x => x.asset)
-    : listRes.data.cards.map(x => x.asset);
+  const assets = list.data.cards.map(c => c.asset);
 
   const addressMap = {};
 
   for (const asset of assets) {
 
     try {
-      const res = await axios.get(`https://xchain.io/api/asset/${asset}`);
-const holders = res.data.holders || [];
 
-      holders.forEach(h => {
+      const res = await axios.get(
+        `https://xchain.io/api/asset/${asset}`
+      );
+
+      if (!res.data || !res.data.holders_count) continue;
+
+      const holders = await axios.get(
+        `https://xchain.io/api/asset/${asset}/balances`
+      );
+
+      for (const h of holders.data.data || []) {
+
         if (parseFloat(h.quantity) > 0) {
           if (!addressMap[h.address]) {
             addressMap[h.address] = new Set();
           }
           addressMap[h.address].add(asset);
         }
-      });
+      }
+
+      await sleep(500);
 
     } catch (e) {
       console.log("Error:", asset);
     }
   }
 
-  const results = Object.entries(addressMap).map(([address, set]) => ({
-    address,
-    uniqueCards: set.size
-  }));
+  const leaderboard = Object.entries(addressMap)
+    .map(([address, set]) => ({
+      address,
+      uniqueCards: set.size
+    }))
+    .sort((a, b) => b.uniqueCards - a.uniqueCards)
+    .slice(0, 100);
 
-  results.sort((a, b) => b.uniqueCards - a.uniqueCards);
-
-  const payload = {
+  const result = {
     totalCards: assets.length,
-    holders: results.slice(0, 100)
+    holders: leaderboard,
+    updatedAt: new Date().toISOString()
   };
 
-  fs.writeFileSync("leaderboard.json", JSON.stringify(payload, null, 2));
-
-  console.log("Leaderboard generated.");
+  fs.writeFileSync("leaderboard.json", JSON.stringify(result, null, 2));
 }
 
 run();
