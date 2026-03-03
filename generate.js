@@ -1,7 +1,7 @@
 const axios = require("axios");
 const fs = require("fs");
 
-const RPC_URL = "https://xchain.io/api/";
+const RPC_URL = "https://counterpartychain.io/api/";
 
 async function getBalances(asset) {
   try {
@@ -19,7 +19,9 @@ async function getBalances(asset) {
         jsonrpc: "2.0",
         id: 0
       },
-      { headers: { "Content-Type": "application/json" } }
+      {
+        headers: { "Content-Type": "application/json" }
+      }
     );
 
     if (response.data.error) {
@@ -43,6 +45,11 @@ async function run() {
     fs.readFileSync("list.json", "utf8")
   );
 
+  if (!list.cards) {
+    console.log("list.json format invalid");
+    return;
+  }
+
   const assets = list.cards.map(c => c.asset);
   const addressMap = {};
 
@@ -64,6 +71,7 @@ async function run() {
       }
     }
 
+    // невелика пауза щоб не спамити RPC
     await new Promise(r => setTimeout(r, 400));
   }
 
