@@ -15,8 +15,8 @@ async function run() {
   for (const asset of assets) {
 
     try {
-      const res = await axios.get(`https://xchain.io/api/balances/${asset}`);
-      const holders = res.data;
+      const res = await axios.get(`https://xchain.io/api/asset/${asset}`);
+const holders = res.data.holders || [];
 
       holders.forEach(h => {
         if (parseFloat(h.quantity) > 0) {
