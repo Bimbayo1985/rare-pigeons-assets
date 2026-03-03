@@ -1,11 +1,36 @@
 const axios = require("axios");
+const cheerio = require("cheerio");
 const fs = require("fs");
 
 async function getHolders(asset) {
   try {
-    const url = `https://api.counterparty.io/v2/assets/${asset}/holders`;
-    const response = await axios.get(url);
-    return response.data.result || [];
+    const url = `https://tokenscan.io/asset/${asset}?tab=holders`;
+
+    const { data } = await axios.get(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0"
+      }
+    });
+
+    const $ = cheerio.load(data);
+    const holders = [];
+
+    $("table tbody tr").each((i, row) => {
+      const cols = $(row).find("td");
+
+      const quantity = $(cols[2]).text().trim();
+      const address = $(cols[4]).text().trim();
+
+      if (address && quantity) {
+        holders.push({
+          address,
+          quantity: parseFloat(quantity)
+        });
+      }
+    });
+
+    return holders;
+
   } catch (e) {
     console.log("Failed for", asset);
     return [];
@@ -28,7 +53,7 @@ async function run() {
     const holders = await getHolders(asset);
 
     for (const holder of holders) {
-      if (parseFloat(holder.quantity) > 0) {
+      if (holder.quantity > 0) {
         if (!addressMap[holder.address]) {
           addressMap[holder.address] = new Set();
         }
@@ -36,7 +61,7 @@ async function run() {
       }
     }
 
-    await new Promise(r => setTimeout(r, 300));
+    await new Promise(r => setTimeout(r, 500));
   }
 
   const leaderboard = Object.entries(addressMap)
