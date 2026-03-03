@@ -3,10 +3,6 @@ const fs = require("fs");
 
 const RPC_URL = "https://xchain.io/api/";
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 async function getBalances(asset) {
   try {
     const response = await axios.post(
@@ -23,42 +19,36 @@ async function getBalances(asset) {
         jsonrpc: "2.0",
         id: 0
       },
-      {
-        headers: { "Content-Type": "application/json" }
-      }
+      { headers: { "Content-Type": "application/json" } }
     );
 
-    console.log("RPC RESPONSE FOR", asset);
-    console.log(JSON.stringify(response.data));
-
     if (response.data.error) {
-      console.log("RPC ERROR:", response.data.error);
+      console.log("RPC error for", asset);
       return [];
     }
 
     return response.data.result || [];
 
   } catch (e) {
-    console.log("RPC FAIL:", asset);
-    console.log(e.response?.data || e.message);
+    console.log("Failed for", asset);
     return [];
   }
 }
 
 async function run() {
 
-  console.log("Starting leaderboard build...");
+  console.log("Building leaderboard...");
 
-  const list = await axios.get(
-    "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json"
+  const list = JSON.parse(
+    fs.readFileSync("list.json", "utf8")
   );
 
-  const assets = list.data.cards.map(c => c.asset);
+  const assets = list.cards.map(c => c.asset);
   const addressMap = {};
 
   for (const asset of assets) {
 
-    console.log("Processing:", asset);
+    console.log("Processing", asset);
 
     const balances = await getBalances(asset);
 
@@ -74,7 +64,7 @@ async function run() {
       }
     }
 
-    await sleep(500);
+    await new Promise(r => setTimeout(r, 400));
   }
 
   const leaderboard = Object.entries(addressMap)
@@ -91,9 +81,12 @@ async function run() {
     updatedAt: new Date().toISOString()
   };
 
-  fs.writeFileSync("leaderboard.json", JSON.stringify(result, null, 2));
+  fs.writeFileSync(
+    "leaderboard.json",
+    JSON.stringify(result, null, 2)
+  );
 
-  console.log("Leaderboard generated.");
+  console.log("Leaderboard saved.");
 }
 
 run();
