@@ -1,49 +1,66 @@
 const axios = require("axios");
 const fs = require("fs");
 
-async function sleep(ms) {
-  return new Promise(r => setTimeout(r, ms));
+const RPC_URL = "https://xchain.io/api/";
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getBalances(asset) {
+  try {
+    const response = await axios.post(RPC_URL, {
+      method: "get_balances",
+      params: {
+        filters: [
+          { field: "asset", op: "==", value: asset }
+        ],
+        filterop: "and"
+      },
+      jsonrpc: "2.0",
+      id: 0
+    }, {
+      headers: { "Content-Type": "application/json" }
+    });
+
+    return response.data.result || [];
+
+  } catch (e) {
+    console.log("RPC error:", asset);
+    return [];
+  }
 }
 
 async function run() {
+
+  console.log("Starting leaderboard build...");
 
   const list = await axios.get(
     "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json"
   );
 
   const assets = list.data.cards.map(c => c.asset);
-
   const addressMap = {};
 
   for (const asset of assets) {
 
-    try {
+    console.log("Processing:", asset);
 
-      const res = await axios.get(
-        `https://xchain.io/api/asset/${asset}`
-      );
+    const balances = await getBalances(asset);
 
-      if (!res.data || !res.data.holders_count) continue;
+    for (const entry of balances) {
 
-      const holders = await axios.get(
-        `https://xchain.io/api/asset/${asset}/balances`
-      );
+      if (parseFloat(entry.quantity) > 0) {
 
-      for (const h of holders.data.data || []) {
-
-        if (parseFloat(h.quantity) > 0) {
-          if (!addressMap[h.address]) {
-            addressMap[h.address] = new Set();
-          }
-          addressMap[h.address].add(asset);
+        if (!addressMap[entry.address]) {
+          addressMap[entry.address] = new Set();
         }
+
+        addressMap[entry.address].add(asset);
       }
-
-      await sleep(500);
-
-    } catch (e) {
-      console.log("Error:", asset);
     }
+
+    await sleep(500); // щоб не злити RPC
   }
 
   const leaderboard = Object.entries(addressMap)
@@ -61,6 +78,8 @@ async function run() {
   };
 
   fs.writeFileSync("leaderboard.json", JSON.stringify(result, null, 2));
+
+  console.log("Leaderboard generated.");
 }
 
 run();
