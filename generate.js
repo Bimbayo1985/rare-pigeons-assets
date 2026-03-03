@@ -4,11 +4,8 @@ const fs = require("fs");
 async function getHolders(asset) {
   try {
     const url = `https://api.counterparty.io/v2/assets/${asset}/holders`;
-
     const response = await axios.get(url);
-
     return response.data.result || [];
-
   } catch (e) {
     console.log("Failed for", asset);
     return [];
@@ -16,7 +13,6 @@ async function getHolders(asset) {
 }
 
 async function run() {
-
   console.log("Building leaderboard...");
 
   const list = JSON.parse(
@@ -27,19 +23,15 @@ async function run() {
   const addressMap = {};
 
   for (const asset of assets) {
-
     console.log("Processing", asset);
 
     const holders = await getHolders(asset);
 
     for (const holder of holders) {
-
       if (parseFloat(holder.quantity) > 0) {
-
         if (!addressMap[holder.address]) {
           addressMap[holder.address] = new Set();
         }
-
         addressMap[holder.address].add(asset);
       }
     }
