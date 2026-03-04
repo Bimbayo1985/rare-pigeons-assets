@@ -9,6 +9,33 @@ const API =
 const EXCLUDED =
 "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
 
+function sleep(ms){
+return new Promise(r=>setTimeout(r,ms))
+}
+
+async function fetchHolders(asset){
+
+const url = `${API}${asset}?start=0&length=100`
+
+for(let i=0;i<3;i++){
+
+try{
+
+const r = await fetch(url)
+const j = await r.json()
+
+if(j && j.data) return j.data
+
+}catch(e){}
+
+await sleep(500)
+
+}
+
+return null
+
+}
+
 async function run(){
 
 console.log("Building leaderboard")
@@ -35,17 +62,16 @@ for(const asset of assets){
 
 console.log("Processing:",asset)
 
-try{
+const data = await fetchHolders(asset)
 
-const url =
-`${API}${asset}?start=0&length=100`
+if(!data){
 
-const r = await fetch(url)
-const j = await r.json()
+console.log("Failed:",asset)
+continue
 
-if(!j.data) continue
+}
 
-for(const row of j.data){
+for(const row of data){
 
 const address = row.address
 const qty = Number(row.quantity)
@@ -67,25 +93,21 @@ holders[address].uniqueCards++
 
 }
 
-}catch(e){
-
-console.log("Failed:",asset)
-
-}
-
 }
 
 const result =
 Object.values(holders)
 .sort((a,b)=>b.uniqueCards-a.uniqueCards)
 
-fs.writeFileSync(
-"./leaderboard.json",
-JSON.stringify({
+const output = {
 totalCards: assets.length,
 holders: result,
 updatedAt: new Date().toISOString()
-},null,2)
+}
+
+fs.writeFileSync(
+"./leaderboard.json",
+JSON.stringify(output,null,2)
 )
 
 console.log("Done")
