@@ -1,106 +1,117 @@
-const fs = require("fs")
+const axios = require("axios");
+const fs = require("fs");
 
-const MUSEUM = "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
+const PAGE_SIZE = 100;
+const MUSEUM = "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms";
 
-const LIMIT = 100
-
-async function fetchHolders(asset){
-
-    let start = 0
-    let all = []
-
-    while(true){
-
-        const url = `https://cp20.tokenscan.io/explorer/holders/${asset}?start=${start}&length=${LIMIT}&action=first`
-
-        console.log("fetch:", url)
-
-        const res = await fetch(url)
-
-        const json = await res.json()
-
-        if(!json.data || json.data.length === 0) break
-
-        const chunk = json.data.map(h => ({
-            address: h.address,
-            quantity: Number(h.quantity)
-        }))
-
-        all = all.concat(chunk)
-
-        if(chunk.length < LIMIT) break
-
-        start += LIMIT
-    }
-
-    return all
+function sleep(ms){
+  return new Promise(r => setTimeout(r, ms));
 }
 
-async function main(){
+async function getHolders(asset){
 
-    console.log("Generating leaderboard")
+  let start = 0;
+  let holders = [];
 
-    const list = JSON.parse(
-        fs.readFileSync("list.json","utf8")
-    )
+  while(true){
 
-    const assets = list.cards.map(c => c.asset)
+    const url =
+      `https://tokenscan.io/explorer/holders/${asset}?start=${start}&length=${PAGE_SIZE}&action=first`;
 
-    const holdersMap = {}
+    try{
 
-    for(const asset of assets){
+      const { data } = await axios.get(url,{
+        headers:{
+          "User-Agent":"Mozilla/5.0",
+          "Accept":"application/json"
+        },
+        timeout:10000
+      });
 
-        console.log("processing:", asset)
+      const rows = data.data || [];
 
-        try{
+      if(rows.length === 0) break;
 
-            const holders = await fetchHolders(asset)
+      holders.push(...rows);
 
-            for(const h of holders){
+      if(rows.length < PAGE_SIZE) break;
 
-                const address = h.address
+      start += PAGE_SIZE;
 
-                if(!address) continue
-                if(address === MUSEUM) continue
+      await sleep(200);
 
-                if(!holdersMap[address]){
-                    holdersMap[address] = new Set()
-                }
+    }catch(e){
 
-                if(h.quantity > 0){
-                    holdersMap[address].add(asset)
-                }
-            }
+      console.log("API error", asset, start, e.message);
+      break;
 
-            await new Promise(r=>setTimeout(r,300))
-
-        }catch(e){
-
-            console.log("error:", asset)
-            console.log(e)
-
-        }
     }
+  }
 
-    const holders = Object.entries(holdersMap)
-        .map(([address,set])=>({
-            address,
-            uniqueCards:set.size
-        }))
-        .sort((a,b)=>b.uniqueCards-a.uniqueCards)
-
-    const output = {
-        totalCards: assets.length,
-        holders,
-        updatedAt: new Date().toISOString()
-    }
-
-    fs.writeFileSync(
-        "leaderboard.json",
-        JSON.stringify(output,null,2)
-    )
-
-    console.log("Leaderboard generated")
+  return holders;
 }
 
-main()
+async function run(){
+
+  console.log("Building leaderboard");
+
+  const list =
+    JSON.parse(fs.readFileSync("list.json","utf8"));
+
+  const assets =
+    list.cards.map(c => c.asset);
+
+  const addressMap = {};
+
+  for(const asset of assets){
+
+    console.log("Processing", asset);
+
+    const holders =
+      await getHolders(asset);
+
+    for(const row of holders){
+
+      const quantity =
+        parseFloat(row[2]);
+
+      const address =
+        row[4];
+
+      if(!address) continue;
+      if(address === MUSEUM) continue;
+      if(quantity <= 0) continue;
+
+      if(!addressMap[address]){
+        addressMap[address] = new Set();
+      }
+
+      addressMap[address].add(asset);
+    }
+
+    await sleep(200);
+  }
+
+  const leaderboard =
+    Object.entries(addressMap)
+      .map(([address,set])=>({
+        address,
+        uniqueCards:set.size
+      }))
+      .sort((a,b)=>b.uniqueCards-a.uniqueCards);
+
+  const result = {
+    totalCards: assets.length,
+    holders: leaderboard,
+    updatedAt: new Date().toISOString()
+  };
+
+  fs.writeFileSync(
+    "leaderboard.json",
+    JSON.stringify(result,null,2)
+  );
+
+  console.log("Leaderboard saved");
+}
+
+run();
