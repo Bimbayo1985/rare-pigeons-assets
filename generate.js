@@ -1,78 +1,73 @@
-const axios = require("axios");
-const fs = require("fs");
+const fs = require("fs")
 
-async function getHolders(asset) {
-  try {
-    const url = `https://tokenscan.io/explorer/holders/${asset}?start=0&length=100&action=first`;
+const LIST_URL =
+"https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json"
 
-    const { data } = await axios.get(url, {
-      headers: {
-        "User-Agent": "Mozilla/5.0",
-        "Accept": "application/json"
-      }
-    });
+const API =
+"https://tokenscan.io/api/asset/holders/"
 
-    // data is expected as an object with data rows
-    return data.data || [];
+const EXCLUDED =
+"1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
 
-  } catch (e) {
-    console.log("Failed for", asset, "->", e.message);
-    return [];
-  }
+async function run(){
+
+console.log("Building leaderboard")
+
+const list = await fetch(LIST_URL).then(r=>r.json())
+
+const assets = list.assets
+
+let holders = {}
+
+for(const asset of assets){
+
+console.log("Asset:",asset)
+
+const url = API + asset
+
+const r = await fetch(url)
+
+const j = await r.json()
+
+for(const h of j.data){
+
+if(h.address === EXCLUDED) continue
+
+if(!holders[h.address]){
+
+holders[h.address] = {
+address: h.address,
+uniqueCards:0
 }
 
-async function run() {
-  console.log("Building leaderboard...");
-
-  const list = JSON.parse(
-    fs.readFileSync("list.json", "utf8")
-  );
-
-  const assets = list.cards.map(c => c.asset);
-  const addressMap = {};
-
-  for (const asset of assets) {
-
-    console.log("Processing", asset);
-
-    const holders = await getHolders(asset);
-
-    for (const row of holders) {
-      // row is an array like [ #, percentage, qty, ..., address, ... ]
-      const address = row[4];
-      const quantity = parseFloat(row[2]);
-
-      if (address && quantity > 0) {
-        if (!addressMap[address]) {
-          addressMap[address] = new Set();
-        }
-        addressMap[address].add(asset);
-      }
-    }
-
-    // small pause so we don't get blocked
-    await new Promise(r => setTimeout(r, 300));
-  }
-
-  const leaderboard = Object.entries(addressMap)
-    .map(([address, set]) => ({
-      address,
-      uniqueCards: set.size
-    }))
-    .sort((a, b) => b.uniqueCards - a.uniqueCards)
-
-  const result = {
-    totalCards: assets.length,
-    holders: leaderboard,
-    updatedAt: new Date().toISOString()
-  };
-
-  fs.writeFileSync(
-    "leaderboard.json",
-    JSON.stringify(result, null, 2)
-  );
-
-  console.log("Leaderboard saved.");
 }
 
-run();
+if(h.quantity > 0){
+
+holders[h.address].uniqueCards++
+
+}
+
+}
+
+}
+
+let result = Object.values(holders)
+
+result.sort((a,b)=>b.uniqueCards-a.uniqueCards)
+
+const json = {
+totalCards: assets.length,
+holders: result
+}
+
+fs.writeFileSync(
+"./leaderboard.json",
+JSON.stringify(json,null,2)
+)
+
+console.log("Done")
+
+}
+
+run()
