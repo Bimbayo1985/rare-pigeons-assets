@@ -2,43 +2,47 @@ const fs = require("fs")
 
 const MUSEUM = "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
 
-async function getHolders(asset){
+const LIMIT = 100
+
+async function fetchHolders(asset){
 
     let start = 0
-    const limit = 100
     let all = []
 
     while(true){
 
-        const url =
-        `https://tokenscan.io/explorer/holders/${asset}?start=${start}&length=${limit}`
+        const url = `https://tokenscan.io/explorer/holders/${asset}?start=${start}&length=${LIMIT}`
 
-        const r = await fetch(url,{
-            headers:{ "accept":"application/json" }
+        console.log("fetch:", url)
+
+        const res = await fetch(url,{
+            headers:{
+                "accept":"application/json"
+            }
         })
 
-        const j = await r.json()
+        const json = await res.json()
 
-        if(!j.data) break
+        if(!json.data) break
 
-        const chunk = j.data.map(h => ({
-            address:h.address,
-            quantity:Number(h.quantity)
+        const chunk = json.data.map(h => ({
+            address: h.holder,
+            quantity: Number(h.quantity)
         }))
 
         all = all.concat(chunk)
 
-        if(chunk.length < limit) break
+        if(chunk.length < LIMIT) break
 
-        start += limit
+        start += LIMIT
     }
 
     return all
 }
 
-async function run(){
+async function main(){
 
-    console.log("Building leaderboard")
+    console.log("Generating leaderboard")
 
     const list = JSON.parse(
         fs.readFileSync("list.json","utf8")
@@ -46,57 +50,64 @@ async function run(){
 
     const assets = list.cards.map(c => c.asset)
 
-    const holders = {}
+    const holdersMap = {}
 
     for(const asset of assets){
 
-        console.log("Processing:",asset)
+        console.log("processing:", asset)
 
         try{
 
-            const h = await getHolders(asset)
+            const holders = await fetchHolders(asset)
 
-            for(const row of h){
+            for(const h of holders){
 
-                if(row.address === MUSEUM) continue
+                const address = h.address
 
-                if(!holders[row.address])
-                    holders[row.address] = new Set()
+                if(!address) continue
 
-                if(row.quantity > 0)
-                    holders[row.address].add(asset)
+                if(address === MUSEUM) continue
+
+                if(!holdersMap[address]){
+                    holdersMap[address] = new Set()
+                }
+
+                if(h.quantity > 0){
+                    holdersMap[address].add(asset)
+                }
 
             }
 
+            await new Promise(r=>setTimeout(r,400))
+
         }catch(e){
 
-            console.log("Failed:",asset)
+            console.log("error with asset:",asset)
+            console.log(e)
 
         }
 
     }
 
-    const leaderboard = Object.entries(holders)
+    const holders = Object.entries(holdersMap)
         .map(([address,set])=>({
             address,
             uniqueCards:set.size
         }))
         .sort((a,b)=>b.uniqueCards-a.uniqueCards)
 
-    const out = {
+    const output = {
         totalCards: assets.length,
-        holders: leaderboard,
+        holders,
         updatedAt: new Date().toISOString()
     }
 
     fs.writeFileSync(
         "leaderboard.json",
-        JSON.stringify(out,null,2)
+        JSON.stringify(output,null,2)
     )
 
-    console.log("Done")
-    console.log("Holders:",leaderboard.length)
-
+    console.log("Leaderboard updated")
 }
 
-run()
+main()
