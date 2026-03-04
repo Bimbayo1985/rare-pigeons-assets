@@ -1,28 +1,25 @@
-name: Build Leaderboard
+name: Generate leaderboard
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: "*/30 * * * *"
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-
-      - name: Init npm
-        run: npm init -y
-
-      - name: Install dependencies
-        run: npm install axios@1.6.8 cheerio@1.0.0-rc.12
 
       - name: Run generator
         run: node generate.js
@@ -33,5 +30,5 @@ jobs:
           git config user.email "actions@github.com"
           git add leaderboard.json
           git commit -m "update leaderboard" || echo "no changes"
-         git pull --rebase
-         git push
+          git pull --rebase origin main
+          git push origin main
