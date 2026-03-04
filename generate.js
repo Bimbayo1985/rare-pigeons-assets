@@ -15,7 +15,29 @@ console.log("Building leaderboard")
 
 const list = await fetch(LIST_URL).then(r=>r.json())
 
-const assets = list
+// підтримка будь-якої структури list.json
+let assets = []
+
+if(Array.isArray(list)){
+
+assets = list
+
+}else if(Array.isArray(list.assets)){
+
+assets = list.assets
+
+}else if(Array.isArray(list.cards)){
+
+assets = list.cards.map(x=>x.asset)
+
+}else{
+
+console.error("Unknown list.json format")
+process.exit(1)
+
+}
+
+console.log("Assets:",assets.length)
 
 let holders = {}
 
@@ -26,7 +48,6 @@ console.log("Asset:",asset)
 const url = API + asset
 
 const r = await fetch(url)
-
 const j = await r.json()
 
 for(const h of j.data){
@@ -66,7 +87,8 @@ fs.writeFileSync(
 JSON.stringify(json,null,2)
 )
 
-console.log("Done")
+console.log("Leaderboard done")
+console.log("Holders:",result.length)
 
 }
 
