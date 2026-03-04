@@ -15,7 +15,7 @@ console.log("Building leaderboard")
 
 const list = await fetch(LIST_URL).then(r=>r.json())
 
-const assets = list.assets
+const assets = list
 
 let holders = {}
 
