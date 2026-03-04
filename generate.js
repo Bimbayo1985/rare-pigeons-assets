@@ -23,15 +23,23 @@ async function getHolders(asset){
     try{
 
       const r = await axios.get(url,{
-        headers:{ "accept":"application/json" },
-        timeout:10000
+        headers:{
+          "accept":"application/json",
+          "user-agent":"Mozilla/5.0"
+        },
+        timeout:15000,
+        validateStatus:()=>true
       })
 
-      const j = r.data
+      if(typeof r.data !== "object"){
+        throw new Error("Not JSON response")
+      }
 
-      if(!j.data) return []
+      if(!r.data.data){
+        throw new Error("No data field")
+      }
 
-      return j.data.map(row => ({
+      return r.data.data.map(row => ({
         address: row[4],
         quantity: Number(row[2])
       }))
@@ -40,7 +48,7 @@ async function getHolders(asset){
 
       console.log(`Retry ${attempt}/${MAX_RETRIES}:`,asset)
 
-      await sleep(1500)
+      await sleep(3000)
 
     }
 
@@ -84,8 +92,8 @@ async function run(){
 
     }
 
-    // pause між assets щоб не блокував tokenscan
-    await sleep(300)
+    // затримка щоб Tokenscan не блокував
+    await sleep(1500)
 
   }
 
