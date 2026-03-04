@@ -7,25 +7,48 @@ const LIST_URL =
 const EXCLUDED =
 "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
 
+const MAX_RETRIES = 10
+
+async function sleep(ms){
+  return new Promise(r => setTimeout(r, ms))
+}
+
 async function getHolders(asset){
 
   const url =
   `https://tokenscan.io/explorer/holders/${asset}?start=0&length=100&action=first`
 
-  const r = await axios.get(url,{
-    headers:{
-      "accept":"application/json"
+  for(let attempt=1; attempt<=MAX_RETRIES; attempt++){
+
+    try{
+
+      const r = await axios.get(url,{
+        headers:{ "accept":"application/json" },
+        timeout:10000
+      })
+
+      const j = r.data
+
+      if(!j.data) return []
+
+      return j.data.map(row => ({
+        address: row[4],
+        quantity: Number(row[2])
+      }))
+
+    }catch(e){
+
+      console.log(`Retry ${attempt}/${MAX_RETRIES}:`,asset)
+
+      await sleep(1500)
+
     }
-  })
 
-  const j = r.data
+  }
 
-  if(!j.data) return []
+  console.log("FAILED AFTER RETRIES:",asset)
 
-  return j.data.map(row => ({
-    address: row[4],
-    quantity: Number(row[2])
-  }))
+  return []
 }
 
 async function run(){
@@ -44,30 +67,25 @@ async function run(){
 
     console.log("Processing:",asset)
 
-    try{
+    const data = await getHolders(asset)
 
-      const data = await getHolders(asset)
+    for(const row of data){
 
-      for(const row of data){
+      if(!row.address) continue
+      if(row.quantity <= 0) continue
 
-        if(!row.address) continue
-        if(row.quantity <= 0) continue
+      if(row.address === EXCLUDED)
+        continue
 
-        if(row.address === EXCLUDED)
-          continue
+      if(!holders[row.address])
+        holders[row.address] = new Set()
 
-        if(!holders[row.address])
-          holders[row.address] = new Set()
-
-        holders[row.address].add(asset)
-
-      }
-
-    }catch(e){
-
-      console.log("Failed:",asset)
+      holders[row.address].add(asset)
 
     }
+
+    // pause між assets щоб не блокував tokenscan
+    await sleep(300)
 
   }
 
