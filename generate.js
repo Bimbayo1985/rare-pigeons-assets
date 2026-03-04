@@ -1,116 +1,82 @@
 const fs = require("fs")
 
-const LIST_URL =
-"https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json"
+async function getHolders(asset){
 
-const API =
-"https://tokenscan.io/api/holders/"
+    const url =
+    `https://tokenscan.io/explorer/holders/${asset}?start=0&length=100`
 
-const EXCLUDED =
-"1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
+    const r = await fetch(url,{
+        headers:{
+            "accept":"application/json"
+        }
+    })
 
-function sleep(ms){
-  return new Promise(r=>setTimeout(r,ms))
-}
+    const j = await r.json()
 
-async function fetchHolders(asset){
+    if(!j.data) return []
 
-  const url = `${API}${asset}?start=0&length=100`
-
-  for(let attempt=1; attempt<=5; attempt++){
-
-    try{
-
-      const r = await fetch(url)
-      const j = await r.json()
-
-      if(j && j.data && j.data.length){
-        return j.data
-      }
-
-    }catch(e){}
-
-    console.log(`Retry ${attempt}:`,asset)
-
-    await sleep(1000)
-
-  }
-
-  return []
+    return j.data.map(h => ({
+        address:h.address,
+        quantity:Number(h.quantity)
+    }))
 }
 
 async function run(){
 
-  console.log("Building leaderboard")
+    console.log("Building leaderboard")
 
-  const list = await fetch(LIST_URL).then(r=>r.json())
+    const assets = JSON.parse(
+        fs.readFileSync("list.json","utf8")
+    )
 
-  let assets = []
+    const holders = {}
 
-  if(Array.isArray(list)){
-    assets = list
-  }
-  else if(list.assets){
-    assets = list.assets
-  }
-  else if(list.cards){
-    assets = list.cards.map(x=>x.asset)
-  }
+    for(const asset of assets){
 
-  console.log("Assets:",assets.length)
+        console.log("Processing:",asset)
 
-  let holders = {}
+        try{
 
-  for(const asset of assets){
+            const h = await getHolders(asset)
 
-    console.log("Processing:",asset)
+            for(const row of h){
 
-    const data = await fetchHolders(asset)
+                if(!holders[row.address])
+                    holders[row.address] = new Set()
 
-    if(!data.length){
-      console.log("No data:",asset)
-      continue
-    }
+                if(row.quantity > 0)
+                    holders[row.address].add(asset)
 
-    for(const row of data){
+            }
 
-      const address = row.address
-      const qty = Number(row.quantity)
+        }catch(e){
 
-      if(!address) continue
-      if(address === EXCLUDED) continue
-      if(qty <= 0) continue
+            console.log("Failed:",asset)
 
-      if(!holders[address]){
-        holders[address] = {
-          address: address,
-          uniqueCards: 0
         }
-      }
-
-      holders[address].uniqueCards++
 
     }
 
-  }
+    const leaderboard = Object.entries(holders)
+        .map(([address,set])=>({
+            address,
+            uniqueCards:set.size
+        }))
+        .sort((a,b)=>b.uniqueCards-a.uniqueCards)
 
-  const result =
-  Object.values(holders)
-  .sort((a,b)=>b.uniqueCards-a.uniqueCards)
+    const out = {
+        totalCards: assets.length,
+        holders: leaderboard,
+        updatedAt: new Date().toISOString()
+    }
 
-  const output = {
-    totalCards: assets.length,
-    holders: result,
-    updatedAt: new Date().toISOString()
-  }
+    fs.writeFileSync(
+        "leaderboard.json",
+        JSON.stringify(out,null,2)
+    )
 
-  fs.writeFileSync(
-    "./leaderboard.json",
-    JSON.stringify(output,null,2)
-  )
-
-  console.log("Done")
-  console.log("Holders:",result.length)
+    console.log("Done")
+    console.log("Holders:",leaderboard.length)
 
 }
 
