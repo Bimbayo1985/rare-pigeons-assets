@@ -1,33 +1,50 @@
 const fs = require("fs")
 
+const MUSEUM = "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
+
 async function getHolders(asset){
 
-    const url =
-    `https://tokenscan.io/explorer/holders/${asset}?start=0&length=100`
+    let start = 0
+    const limit = 100
+    let all = []
 
-    const r = await fetch(url,{
-        headers:{
-            "accept":"application/json"
-        }
-    })
+    while(true){
 
-    const j = await r.json()
+        const url =
+        `https://tokenscan.io/explorer/holders/${asset}?start=${start}&length=${limit}`
 
-    if(!j.data) return []
+        const r = await fetch(url,{
+            headers:{ "accept":"application/json" }
+        })
 
-    return j.data.map(h => ({
-        address:h.address,
-        quantity:Number(h.quantity)
-    }))
+        const j = await r.json()
+
+        if(!j.data) break
+
+        const chunk = j.data.map(h => ({
+            address:h.address,
+            quantity:Number(h.quantity)
+        }))
+
+        all = all.concat(chunk)
+
+        if(chunk.length < limit) break
+
+        start += limit
+    }
+
+    return all
 }
 
 async function run(){
 
     console.log("Building leaderboard")
 
-    const assets = JSON.parse(
+    const list = JSON.parse(
         fs.readFileSync("list.json","utf8")
     )
+
+    const assets = list.cards.map(c => c.asset)
 
     const holders = {}
 
@@ -40,6 +57,8 @@ async function run(){
             const h = await getHolders(asset)
 
             for(const row of h){
+
+                if(row.address === MUSEUM) continue
 
                 if(!holders[row.address])
                     holders[row.address] = new Set()
