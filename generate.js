@@ -1,10 +1,10 @@
 const fs = require("fs")
 
-const LIST_URL =
+const LIST =
 "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json"
 
-const API =
-"https://tokenscan.io/api/asset/holders/"
+const HOLDERS =
+"https://tokenscan.io/explorer/holders/"
 
 const EXCLUDED =
 "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
@@ -13,24 +13,9 @@ async function run(){
 
 console.log("Building leaderboard")
 
-const list = await fetch(LIST_URL).then(r=>r.json())
+const list = await fetch(LIST).then(r=>r.json())
 
-let assets = []
-
-// підтримка будь-якої структури list.json
-if(Array.isArray(list)){
-assets = list
-}
-else if(Array.isArray(list.assets)){
-assets = list.assets
-}
-else if(Array.isArray(list.cards)){
-assets = list.cards.map(x=>x.asset)
-}
-else{
-console.log("Unknown list format")
-process.exit(1)
-}
+const assets = Array.isArray(list) ? list : list.assets
 
 console.log("Assets:",assets.length)
 
@@ -38,62 +23,65 @@ let holders = {}
 
 for(const asset of assets){
 
-console.log("Asset:",asset)
+console.log("Processing:",asset)
+
+const url =
+`${HOLDERS}${asset}?start=0&length=100&action=first`
 
 try{
 
-const r = await fetch(API + asset)
+const r = await fetch(url)
+
 const j = await r.json()
 
-// якщо tokenscan не повернув data
-if(!j || !Array.isArray(j.data)){
-console.log("No holders for",asset)
-continue
-}
+if(!j.data) continue
 
-for(const h of j.data){
+for(const row of j.data){
 
-if(!h.address) continue
+const address = row.address
+const qty = Number(row.quantity)
 
-if(h.address === EXCLUDED) continue
+if(address === EXCLUDED) continue
 
-if(!holders[h.address]){
-holders[h.address] = {
-address: h.address,
+if(!holders[address]){
+
+holders[address] = {
+address: address,
 uniqueCards: 0
 }
+
 }
 
-if(h.quantity > 0){
-holders[h.address].uniqueCards++
+if(qty > 0){
+
+holders[address].uniqueCards++
+
 }
 
 }
 
 }catch(e){
 
-console.log("Failed asset:",asset)
+console.log("Failed:",asset)
 
 }
 
 }
 
-let result = Object.values(holders)
-
-result.sort((a,b)=>b.uniqueCards-a.uniqueCards)
-
-const json = {
-totalCards: assets.length,
-holders: result,
-updatedAt: new Date().toISOString()
-}
+const result =
+Object.values(holders)
+.sort((a,b)=>b.uniqueCards-a.uniqueCards)
 
 fs.writeFileSync(
 "./leaderboard.json",
-JSON.stringify(json,null,2)
+JSON.stringify({
+totalCards: assets.length,
+holders: result,
+updatedAt: new Date().toISOString()
+},null,2)
 )
 
-console.log("Leaderboard done")
+console.log("Done")
 console.log("Holders:",result.length)
 
 }
