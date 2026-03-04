@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
@@ -30,5 +29,4 @@ jobs:
           git config user.email "actions@github.com"
           git add leaderboard.json
           git commit -m "update leaderboard" || echo "no changes"
-          git pull --rebase origin main
-          git push origin main
+          git push origin HEAD:main --force
