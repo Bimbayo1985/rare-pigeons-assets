@@ -11,22 +11,18 @@ async function fetchHolders(asset){
 
     while(true){
 
-        const url = `https://tokenscan.io/explorer/holders/${asset}?start=${start}&length=${LIMIT}`
+        const url = `https://cp20.tokenscan.io/explorer/holders/${asset}?start=${start}&length=${LIMIT}&action=first`
 
         console.log("fetch:", url)
 
-        const res = await fetch(url,{
-            headers:{
-                "accept":"application/json"
-            }
-        })
+        const res = await fetch(url)
 
         const json = await res.json()
 
-        if(!json.data) break
+        if(!json.data || json.data.length === 0) break
 
         const chunk = json.data.map(h => ({
-            address: h.holder,
+            address: h.address,
             quantity: Number(h.quantity)
         }))
 
@@ -65,7 +61,6 @@ async function main(){
                 const address = h.address
 
                 if(!address) continue
-
                 if(address === MUSEUM) continue
 
                 if(!holdersMap[address]){
@@ -75,18 +70,16 @@ async function main(){
                 if(h.quantity > 0){
                     holdersMap[address].add(asset)
                 }
-
             }
 
-            await new Promise(r=>setTimeout(r,400))
+            await new Promise(r=>setTimeout(r,300))
 
         }catch(e){
 
-            console.log("error with asset:",asset)
+            console.log("error:", asset)
             console.log(e)
 
         }
-
     }
 
     const holders = Object.entries(holdersMap)
@@ -107,7 +100,7 @@ async function main(){
         JSON.stringify(output,null,2)
     )
 
-    console.log("Leaderboard updated")
+    console.log("Leaderboard generated")
 }
 
 main()
