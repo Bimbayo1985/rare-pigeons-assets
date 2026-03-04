@@ -1,36 +1,36 @@
 {
-  "totalCards": 62,
+  "totalCards": 66,
   "holders": [
     {
-      "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
-      "uniqueCards": 57
+      "address": "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms",
+      "uniqueCards": 61
     },
     {
-      "address": "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms",
-      "uniqueCards": 57
+      "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
+      "uniqueCards": 59
     },
     {
       "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
-      "uniqueCards": 52
+      "uniqueCards": 53
     },
     {
       "address": "14udFRS6AdnQNJZn9RZ1H3LtSqP7k2UeTC",
-      "uniqueCards": 49
+      "uniqueCards": 50
     },
     {
       "address": "bc1q5v944qs3aqkhrux3easw0qp9w23glmwa9cjk2q",
-      "uniqueCards": 36
+      "uniqueCards": 38
     },
     {
       "address": "1PtyNjFBBCKhUQGbqN5nLLQuDbMaQRL7wF",
-      "uniqueCards": 33
-    },
-    {
-      "address": "178etygrwEeeyQso9we85rUqYZbkiqzL4A",
-      "uniqueCards": 30
+      "uniqueCards": 34
     },
     {
       "address": "1AkGM1vi7mQqLZdYa95RTPb5XcRiYrhTdy",
+      "uniqueCards": 31
+    },
+    {
+      "address": "178etygrwEeeyQso9we85rUqYZbkiqzL4A",
       "uniqueCards": 30
     },
     {
@@ -38,24 +38,24 @@
       "uniqueCards": 29
     },
     {
+      "address": "1JDogZS6tQcSxwfxhv6XKKjcyicYA4Feev",
+      "uniqueCards": 29
+    },
+    {
       "address": "1Mqy489eEPBLn5P3ZjZJ1ZsDyLdGioSsaE",
       "uniqueCards": 29
     },
     {
-      "address": "1JDogZS6tQcSxwfxhv6XKKjcyicYA4Feev",
+      "address": "1CZ2VVEnhFQHp1bmHd5WjGf7ERyKNQf4bg",
       "uniqueCards": 28
     },
     {
-      "address": "1CZ2VVEnhFQHp1bmHd5WjGf7ERyKNQf4bg",
+      "address": "15dvLyXTstk7nLJ4oUXtrKc9sqccdhzLzS",
       "uniqueCards": 27
     },
     {
-      "address": "15dvLyXTstk7nLJ4oUXtrKc9sqccdhzLzS",
-      "uniqueCards": 26
-    },
-    {
       "address": "bc1q9z6te6zm9rpvx07sfg45ga0j83gms6pyufhhpl",
-      "uniqueCards": 24
+      "uniqueCards": 25
     },
     {
       "address": "1AwS3wRFNCoymKs69BXjAA4VfgWvuKvx4j",
@@ -75,7 +75,7 @@
     },
     {
       "address": "13j9aWM7hAJCgpFq2uWPUtJ36ZiCX139DG",
-      "uniqueCards": 15
+      "uniqueCards": 17
     },
     {
       "address": "1parodyTHe9y2VHk8kZNMZBNTkPTwKj3r",
@@ -91,6 +91,10 @@
     },
     {
       "address": "bc1qkzn4cjhg59esvthmlg75gd9s6exhxg5gsz5pgp",
+      "uniqueCards": 11
+    },
+    {
+      "address": "1866tuqUy65SuTadWpSFZt7NiHybUF4B7k",
       "uniqueCards": 10
     },
     {
@@ -103,10 +107,6 @@
     },
     {
       "address": "138kNmWCdJxGUGUxMzgcjMpHVhqGaDrh1k",
-      "uniqueCards": 9
-    },
-    {
-      "address": "1866tuqUy65SuTadWpSFZt7NiHybUF4B7k",
       "uniqueCards": 9
     },
     {
@@ -210,6 +210,10 @@
       "uniqueCards": 3
     },
     {
+      "address": "1E48VsL3N84bHn8KA1CqBdUboF8UQunfTZ",
+      "uniqueCards": 3
+    },
+    {
       "address": "193J7RVEY2BgA5aKfL6BBAVSyiS1UyBRG6",
       "uniqueCards": 2
     },
@@ -246,11 +250,11 @@
       "uniqueCards": 2
     },
     {
-      "address": "1E48VsL3N84bHn8KA1CqBdUboF8UQunfTZ",
+      "address": "1LWLicRBi9EPcdnkJ2w7FaMQfdZoEiFETd",
       "uniqueCards": 2
     },
     {
-      "address": "1LWLicRBi9EPcdnkJ2w7FaMQfdZoEiFETd",
+      "address": "1JgXmr4SG2Kg4eGy2yWB5nQAm7vZRwHC1c",
       "uniqueCards": 2
     },
     {
@@ -311,10 +315,6 @@
     },
     {
       "address": "16yRstRXStVJJ1TN2S4DCWifyrCsetpma7",
-      "uniqueCards": 1
-    },
-    {
-      "address": "1JgXmr4SG2Kg4eGy2yWB5nQAm7vZRwHC1c",
       "uniqueCards": 1
     },
     {
@@ -384,7 +384,23 @@
     {
       "address": "13ENM79QUyypJHQy1mAtfMp6Ke3VgnTEzQ",
       "uniqueCards": 1
+    },
+    {
+      "address": "bc1q4uhehuxkn9kxuynl3wha97x9xg3hgcrrcd36ax",
+      "uniqueCards": 1
+    },
+    {
+      "address": "12Bq1XhEkLh61kYzaPgi3W9bh6bYEyutDW",
+      "uniqueCards": 1
+    },
+    {
+      "address": "1DNMzTv4WtLaVcVPwCp6YKpqEPK8XJmamE",
+      "uniqueCards": 1
+    },
+    {
+      "address": "1B9wVF6YuG1aGVmLSmpKeVphWbEm3725DU",
+      "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-03-04T17:07:01.104Z"
+  "updatedAt": "2026-03-04T18:01:25.428Z"
 }
