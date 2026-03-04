@@ -32,8 +32,11 @@ async function run(){
 
   console.log("Starting leaderboard build...")
 
-  const assets =
+  const list =
     await axios.get(LIST_URL).then(r=>r.data)
+
+  const assets =
+    list.cards.map(c => c.asset)
 
   const holders = {}
 
