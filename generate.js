@@ -1,9 +1,9 @@
 const fs = require("fs")
 
-const LIST =
+const LIST_URL =
 "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/main/list.json"
 
-const HOLDERS =
+const HOLDERS_URL =
 "https://tokenscan.io/explorer/holders/"
 
 const EXCLUDED =
@@ -13,35 +13,60 @@ async function run(){
 
 console.log("Building leaderboard")
 
-const list = await fetch(LIST).then(r=>r.json())
+const r = await fetch(LIST_URL)
+const list = await r.json()
 
-const assets = Array.isArray(list) ? list : list.assets
+let assets = []
 
-console.log("Assets:",assets.length)
+// підтримка всіх можливих структур list.json
+if(Array.isArray(list)){
+
+assets = list
+
+}
+else if(list.assets){
+
+assets = list.assets
+
+}
+else if(list.cards){
+
+assets = list.cards.map(c => c.asset)
+
+}
+else{
+
+console.log("Cannot detect assets list")
+process.exit(1)
+
+}
+
+console.log("Assets:", assets.length)
 
 let holders = {}
 
 for(const asset of assets){
 
-console.log("Processing:",asset)
-
-const url =
-`${HOLDERS}${asset}?start=0&length=100&action=first`
+console.log("Processing:", asset)
 
 try{
 
-const r = await fetch(url)
+const url =
+`${HOLDERS_URL}${asset}?start=0&length=100&action=first`
 
-const j = await r.json()
+const res = await fetch(url)
+const data = await res.json()
 
-if(!j.data) continue
+if(!data.data) continue
 
-for(const row of j.data){
+for(const row of data.data){
 
 const address = row.address
 const qty = Number(row.quantity)
 
+if(!address) continue
 if(address === EXCLUDED) continue
+if(qty <= 0) continue
 
 if(!holders[address]){
 
@@ -52,17 +77,13 @@ uniqueCards: 0
 
 }
 
-if(qty > 0){
-
 holders[address].uniqueCards++
-
-}
 
 }
 
 }catch(e){
 
-console.log("Failed:",asset)
+console.log("Failed:", asset)
 
 }
 
@@ -78,11 +99,11 @@ JSON.stringify({
 totalCards: assets.length,
 holders: result,
 updatedAt: new Date().toISOString()
-},null,2)
+}, null, 2)
 )
 
 console.log("Done")
-console.log("Holders:",result.length)
+console.log("Holders:", result.length)
 
 }
 
