@@ -22,9 +22,9 @@ async function getHolders(asset){
 
   if(!j.data) return []
 
-  return j.data.map(h => ({
-    address: h.address,
-    quantity: Number(h.quantity)
+  return j.data.map(row => ({
+    address: row[4],
+    quantity: Number(row[2])
   }))
 }
 
@@ -50,6 +50,7 @@ async function run(){
 
       for(const row of data){
 
+        if(!row.address) continue
         if(row.quantity <= 0) continue
 
         if(row.address === EXCLUDED)
