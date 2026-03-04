@@ -10,108 +10,107 @@ const EXCLUDED =
 "1PigeonPPBbRQSmJ5NPFafnap7kCrXMwms"
 
 function sleep(ms){
-return new Promise(r=>setTimeout(r,ms))
+  return new Promise(r=>setTimeout(r,ms))
 }
 
 async function fetchHolders(asset){
 
-const url = `${API}${asset}?start=0&length=100`
+  const url = `${API}${asset}?start=0&length=100`
 
-for(let i=0;i<3;i++){
+  for(let attempt=1; attempt<=5; attempt++){
 
-try{
+    try{
 
-const r = await fetch(url)
-const j = await r.json()
+      const r = await fetch(url)
+      const j = await r.json()
 
-if(j && j.data) return j.data
+      if(j && j.data && j.data.length){
+        return j.data
+      }
 
-}catch(e){}
+    }catch(e){}
 
-await sleep(500)
+    console.log(`Retry ${attempt}:`,asset)
 
-}
+    await sleep(1000)
 
-return null
+  }
 
+  return []
 }
 
 async function run(){
 
-console.log("Building leaderboard")
+  console.log("Building leaderboard")
 
-const list = await fetch(LIST_URL).then(r=>r.json())
+  const list = await fetch(LIST_URL).then(r=>r.json())
 
-let assets = []
+  let assets = []
 
-if(Array.isArray(list)){
-assets = list
-}
-else if(list.assets){
-assets = list.assets
-}
-else if(list.cards){
-assets = list.cards.map(x=>x.asset)
-}
+  if(Array.isArray(list)){
+    assets = list
+  }
+  else if(list.assets){
+    assets = list.assets
+  }
+  else if(list.cards){
+    assets = list.cards.map(x=>x.asset)
+  }
 
-console.log("Assets:",assets.length)
+  console.log("Assets:",assets.length)
 
-let holders = {}
+  let holders = {}
 
-for(const asset of assets){
+  for(const asset of assets){
 
-console.log("Processing:",asset)
+    console.log("Processing:",asset)
 
-const data = await fetchHolders(asset)
+    const data = await fetchHolders(asset)
 
-if(!data){
+    if(!data.length){
+      console.log("No data:",asset)
+      continue
+    }
 
-console.log("Failed:",asset)
-continue
+    for(const row of data){
 
-}
+      const address = row.address
+      const qty = Number(row.quantity)
 
-for(const row of data){
+      if(!address) continue
+      if(address === EXCLUDED) continue
+      if(qty <= 0) continue
 
-const address = row.address
-const qty = Number(row.quantity)
+      if(!holders[address]){
+        holders[address] = {
+          address: address,
+          uniqueCards: 0
+        }
+      }
 
-if(!address) continue
-if(address === EXCLUDED) continue
-if(qty <= 0) continue
+      holders[address].uniqueCards++
 
-if(!holders[address]){
+    }
 
-holders[address] = {
-address: address,
-uniqueCards: 0
-}
+  }
 
-}
+  const result =
+  Object.values(holders)
+  .sort((a,b)=>b.uniqueCards-a.uniqueCards)
 
-holders[address].uniqueCards++
+  const output = {
+    totalCards: assets.length,
+    holders: result,
+    updatedAt: new Date().toISOString()
+  }
 
-}
+  fs.writeFileSync(
+    "./leaderboard.json",
+    JSON.stringify(output,null,2)
+  )
 
-}
-
-const result =
-Object.values(holders)
-.sort((a,b)=>b.uniqueCards-a.uniqueCards)
-
-const output = {
-totalCards: assets.length,
-holders: result,
-updatedAt: new Date().toISOString()
-}
-
-fs.writeFileSync(
-"./leaderboard.json",
-JSON.stringify(output,null,2)
-)
-
-console.log("Done")
-console.log("Holders:",result.length)
+  console.log("Done")
+  console.log("Holders:",result.length)
 
 }
 
