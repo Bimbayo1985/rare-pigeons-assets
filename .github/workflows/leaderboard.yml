@@ -5,6 +5,10 @@ on:
     - cron: "*/30 * * * *"
   workflow_dispatch:
 
+concurrency:
+  group: leaderboard
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -13,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
@@ -25,24 +28,15 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install deps
+        run: npm install axios
+
       - name: Run generator
         run: node generate.js
 
-      - name: Commit leaderboard
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-          git add leaderboard.json
-
-          if git diff --staged --quiet; then
-            echo "No changes"
-            exit 0
-          fi
-
-          git commit -m "update leaderboard"
-
-      - name: Push (overwrite safe)
-        run: |
-          git fetch origin main
-          git push --force origin HEAD:main
+      - name: Auto commit leaderboard
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "update leaderboard"
+          file_pattern: leaderboard.json
+          branch: main
