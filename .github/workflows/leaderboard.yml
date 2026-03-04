@@ -13,9 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: main
 
       - name: Setup Node
@@ -31,8 +33,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git checkout -B leaderboard-update
-
           git add leaderboard.json
 
           if git diff --staged --quiet; then
@@ -42,6 +42,7 @@ jobs:
 
           git commit -m "update leaderboard"
 
-      - name: Push branch
+      - name: Push (overwrite safe)
         run: |
-          git push origin leaderboard-update --force
+          git fetch origin main
+          git push --force origin HEAD:main
