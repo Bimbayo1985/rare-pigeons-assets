@@ -60,7 +60,6 @@ async function run() {
       uniqueCards: set.size
     }))
     .sort((a, b) => b.uniqueCards - a.uniqueCards)
-    .slice(0, 100);
 
   const result = {
     totalCards: assets.length,
