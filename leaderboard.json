@@ -3,7 +3,7 @@
   "holders": [
     {
       "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
-      "uniqueCards": 57
+      "uniqueCards": 58
     },
     {
       "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
@@ -15,18 +15,18 @@
     },
     {
       "address": "bc1q5v944qs3aqkhrux3easw0qp9w23glmwa9cjk2q",
-      "uniqueCards": 36
+      "uniqueCards": 37
     },
     {
       "address": "1PtyNjFBBCKhUQGbqN5nLLQuDbMaQRL7wF",
       "uniqueCards": 33
     },
     {
-      "address": "178etygrwEeeyQso9we85rUqYZbkiqzL4A",
-      "uniqueCards": 30
+      "address": "1AkGM1vi7mQqLZdYa95RTPb5XcRiYrhTdy",
+      "uniqueCards": 31
     },
     {
-      "address": "1AkGM1vi7mQqLZdYa95RTPb5XcRiYrhTdy",
+      "address": "178etygrwEeeyQso9we85rUqYZbkiqzL4A",
       "uniqueCards": 30
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "address": "1CZ2VVEnhFQHp1bmHd5WjGf7ERyKNQf4bg",
-      "uniqueCards": 27
+      "uniqueCards": 28
     },
     {
       "address": "15dvLyXTstk7nLJ4oUXtrKc9sqccdhzLzS",
@@ -71,7 +71,7 @@
     },
     {
       "address": "13j9aWM7hAJCgpFq2uWPUtJ36ZiCX139DG",
-      "uniqueCards": 15
+      "uniqueCards": 16
     },
     {
       "address": "1parodyTHe9y2VHk8kZNMZBNTkPTwKj3r",
@@ -158,6 +158,10 @@
       "uniqueCards": 4
     },
     {
+      "address": "1E48VsL3N84bHn8KA1CqBdUboF8UQunfTZ",
+      "uniqueCards": 4
+    },
+    {
       "address": "19RfaWiQnoqkmbUSDosKymg4mALrNbN13p",
       "uniqueCards": 4
     },
@@ -195,10 +199,6 @@
     },
     {
       "address": "1NfJnJdAdmm2rJCFW54NsAKqqTTMexCNJ3",
-      "uniqueCards": 3
-    },
-    {
-      "address": "1E48VsL3N84bHn8KA1CqBdUboF8UQunfTZ",
       "uniqueCards": 3
     },
     {
@@ -380,7 +380,11 @@
     {
       "address": "13ENM79QUyypJHQy1mAtfMp6Ke3VgnTEzQ",
       "uniqueCards": 1
+    },
+    {
+      "address": "1MBd5tYDxwHNKXTxqt8F3mzJVqsb6tsBS7",
+      "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-03-04T22:31:30.501Z"
+  "updatedAt": "2026-03-04T22:39:46.837Z"
 }
