@@ -249,6 +249,22 @@
 {
   "asset": "ROCKWELLPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists10.png"
-}    
+},   
+{
+  "asset": "SACREDBONES",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C01.png"
+}, 
+{
+  "asset": "PIGEONISM",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C02.png"
+},
+{
+  "asset": "PIGEONINTRAP",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C03.png"
+}, 
+{
+  "asset": "PERCHED",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C04.png"
+}
   ]
 }
