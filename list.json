@@ -265,6 +265,18 @@
 {
   "asset": "PERCHED",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C04.png"
+},
+{
+  "asset": "SQUIDPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C05.png"
+}, 
+{
+  "asset": "PGNCOBBEE",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/PGNCOBBEE.png"
+}, 
+{
+  "asset": "ULTRAPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C06.png"
 }
   ]
 }
