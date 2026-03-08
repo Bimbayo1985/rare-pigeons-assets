@@ -277,6 +277,18 @@
 {
   "asset": "ULTRAPIGEON",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C06.png"
+},
+{
+  "asset": "PALEFLYER",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C07.png"
+},
+{
+  "asset": "HORSEGM",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/HORSEGM.png"
+},
+{
+  "asset": "FOPLING",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C08.png"
 }
   ]
 }
