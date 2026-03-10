@@ -289,6 +289,14 @@
 {
   "asset": "FOPLING",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C08.png"
+},
+{
+  "asset": "PIGEONLEGOS",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C09.png"
+},
+{
+  "asset": "RESIDENTPEN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C10.png"
 }
   ]
 }
