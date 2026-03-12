@@ -297,6 +297,14 @@
 {
   "asset": "RESIDENTPEN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C10.png"
+},
+{
+  "asset": "NARDWUARPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C11.jpg"
+},
+{
+  "asset": "BLESSEDPREY",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C12.png"
 }
   ]
 }
