@@ -325,6 +325,42 @@
 {
   "asset": "NOLANPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/Artists11.png"
-}  
+},
+{
+  "asset": "PEEREON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C17.png"
+},
+{
+  "asset": "BANGPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C18.png"
+},
+{
+  "asset": "PIGEONLEGION",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C19.png"
+},
+{
+  "asset": "PIGEONWARIOR",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C20.png"
+},
+{
+  "asset": "RPIJO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS3C21.png"
+},
+{
+  "asset": "PIGEONSTEVE",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/dividend032026.png"
+},
+{
+  "asset": "THESCIENTIST",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S3WOOD.gif"
+},
+{
+  "asset": "THESYNCHRO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S3SILVER.gif"
+},
+{
+  "asset": "THECUSTODIAN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S3GOLD.gif"
+}
   ]
 }
