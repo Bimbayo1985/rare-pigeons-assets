@@ -361,6 +361,30 @@
 {
   "asset": "THECUSTODIAN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S3GOLD.gif"
+},
+{
+  "asset": "PIGEONTERMIR",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C1.png"
+},
+{
+  "asset": "PIGEONPRIEST",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C2.png"
+},
+{
+  "asset": "PIGALLEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C3.png"
+},
+{
+  "asset": "PEPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C4.png"
+},
+{
+  "asset": "TRUMPETER",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C5.png"
+},
+{
+  "asset": "PIXOPIJO",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C6.png"
 }
   ]
 }
