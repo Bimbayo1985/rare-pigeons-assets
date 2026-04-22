@@ -441,6 +441,26 @@
 {
   "asset": "PGNALIEN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C19.png"
+},
+
+{
+  "asset": "PIGECOINS",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C20.png"
+},
+
+{
+  "asset": "PGNPEACE",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS4C21.png"
+},
+
+{
+  "asset": "PIGEONPOST",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/PIGEONPOST.png"
+},
+
+{
+  "asset": "ESCHERPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/ESCHERPIGEON.png"
 }
   ]
 }
