@@ -1,17 +1,17 @@
 {
-  "totalCards": 110,
+  "totalCards": 114,
   "holders": [
     {
       "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
-      "uniqueCards": 96
+      "uniqueCards": 98
     },
     {
       "address": "1K3wUPfs6b6EUNWFTrSPguwzTzWHd7UeWu",
-      "uniqueCards": 94
+      "uniqueCards": 97
     },
     {
       "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
-      "uniqueCards": 87
+      "uniqueCards": 90
     },
     {
       "address": "14udFRS6AdnQNJZn9RZ1H3LtSqP7k2UeTC",
@@ -23,7 +23,7 @@
     },
     {
       "address": "1BH9sBVQ645gx2D3pfkc95SSvvEXpFhw2N",
-      "uniqueCards": 40
+      "uniqueCards": 41
     },
     {
       "address": "1PtyNjFBBCKhUQGbqN5nLLQuDbMaQRL7wF",
@@ -50,11 +50,11 @@
       "uniqueCards": 32
     },
     {
-      "address": "1Mqy489eEPBLn5P3ZjZJ1ZsDyLdGioSsaE",
-      "uniqueCards": 31
+      "address": "1Aw8NkS7AzW6yQgnT4YmEzADj7LAPLnZ65",
+      "uniqueCards": 32
     },
     {
-      "address": "1Aw8NkS7AzW6yQgnT4YmEzADj7LAPLnZ65",
+      "address": "1Mqy489eEPBLn5P3ZjZJ1ZsDyLdGioSsaE",
       "uniqueCards": 31
     },
     {
@@ -110,12 +110,12 @@
       "uniqueCards": 13
     },
     {
-      "address": "bc1qkzn4cjhg59esvthmlg75gd9s6exhxg5gsz5pgp",
+      "address": "1L1EBBB468hK4NKLMC8XqbbskPXc7U9EUD",
       "uniqueCards": 12
     },
     {
-      "address": "1L1EBBB468hK4NKLMC8XqbbskPXc7U9EUD",
-      "uniqueCards": 11
+      "address": "bc1qkzn4cjhg59esvthmlg75gd9s6exhxg5gsz5pgp",
+      "uniqueCards": 12
     },
     {
       "address": "13dNrtrrmAu4KJz3J7Bc2Zgjkjj1mCxmEY",
@@ -510,5 +510,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-04-22T17:36:32.393Z"
+  "updatedAt": "2026-04-22T19:27:58.880Z"
 }
