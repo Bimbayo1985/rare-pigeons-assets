@@ -501,6 +501,34 @@
 {
   "asset": "SAMURAIPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/SAMURAIPIGEON.png"
+},
+{
+  "asset": "PIGEOUNCHAIN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C2.jpg"
+},
+{
+  "asset": "PIGERAON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C3.jpg"
+},
+{
+  "asset": "PECKING",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C4.jpg"
+},
+{
+  "asset": "KINGPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C5.jpg"
+},
+{
+  "asset": "PEACEPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C6.jpg"
+},
+{
+  "asset": "PIGANKSY",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C7.jpg"
+},
+{
+  "asset": "PGNZOMBIA",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C8.jpg"
 }
   ]
 }
