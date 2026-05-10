@@ -529,6 +529,18 @@
 {
   "asset": "PGNZOMBIA",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C8.png"
+},
+{
+  "asset": "PRISMPIGEOND",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C9.jpg"
+},
+{
+  "asset": "PRISMPIGEONE",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C10.jpg"
+},
+{
+  "asset": "PRISMPIGEONF",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C11.jpg"
 }
   ]
 }
