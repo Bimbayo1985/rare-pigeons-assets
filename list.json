@@ -541,6 +541,11 @@
 {
   "asset": "PRISMPIGEONF",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C11.jpg"
+},
+
+{
+  "asset": "PIGEONMODEL",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C12.jpg"
 }
   ]
 }
