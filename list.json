@@ -545,6 +545,10 @@
 {
   "asset": "PIGEONMODEL",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C12.jpg"
+},
+{
+  "asset": "PIGEOWHISKEY",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C13.jpg"
 }
   ]
 }
