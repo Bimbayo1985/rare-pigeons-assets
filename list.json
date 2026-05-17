@@ -553,6 +553,10 @@
 {
   "asset": "PIGEONCULT",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C14.jpg"
+},
+{
+  "asset": "CZPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C15.png"
 }
   ]
 }
