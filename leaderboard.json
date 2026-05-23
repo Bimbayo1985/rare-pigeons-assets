@@ -3,7 +3,7 @@
   "holders": [
     {
       "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
-      "uniqueCards": 116
+      "uniqueCards": 118
     },
     {
       "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
@@ -578,5 +578,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-05-23T10:58:33.500Z"
+  "updatedAt": "2026-05-23T12:06:04.927Z"
 }
