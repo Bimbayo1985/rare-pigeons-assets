@@ -593,6 +593,14 @@
 {
   "asset": "GAYPIGEON",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS5C21.png"
+},
+{
+  "asset": "CORNPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/CORNPIGEON.png"
+},
+{
+  "asset": "FIRSTPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/FIRSTPIGEON.png"
 }
   ]
 }
