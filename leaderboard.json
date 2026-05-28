@@ -2,11 +2,11 @@
   "totalCards": 150,
   "holders": [
     {
-      "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
-      "uniqueCards": 120
+      "address": "1K3wUPfs6b6EUNWFTrSPguwzTzWHd7UeWu",
+      "uniqueCards": 123
     },
     {
-      "address": "1K3wUPfs6b6EUNWFTrSPguwzTzWHd7UeWu",
+      "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
       "uniqueCards": 120
     },
     {
@@ -582,5 +582,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-05-28T00:11:19.433Z"
+  "updatedAt": "2026-05-28T04:55:03.902Z"
 }
