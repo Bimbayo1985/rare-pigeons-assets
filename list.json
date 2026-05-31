@@ -601,6 +601,50 @@
 {
   "asset": "FIRSTPIGEON",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/FIRSTPIGEON.png"
+},
+{
+  "asset": "THEDECKHAND",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S5WOOD.png"
+},
+{
+  "asset": "THENAVIGATOR",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S5SILVER.png"
+},
+{
+  "asset": "THECAPTAIN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/S5GOLD.png"
+},
+{
+  "asset": "BAKERPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/BAKERPGN.png"
+},
+{
+  "asset": "FATPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/FATPIGEON.png"
+},
+{
+  "asset": "MAYAPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/MAYAPGN.png"
+},
+{
+  "asset": "MONKPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/MONKPGN.png"
+},
+{
+  "asset": "NERONPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/NERONPGN.png"
+},
+{
+  "asset": "NINJAPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/NINJAPIGEON.png"
+},
+{
+  "asset": "ROBOTPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/ROBOTPGN.png"
+},
+{
+  "asset": "XRPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/XRPIGEON.png"
 }
   ]
 }
