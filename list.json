@@ -645,6 +645,10 @@
 {
   "asset": "XRPIGEON",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/XRPIGEON.png"
+},
+{
+  "asset": "PGNSAMURAI",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS6C1.png"
 }
   ]
 }
