@@ -661,6 +661,10 @@
 {
   "asset": "PGNARTIST",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS6C4.jpg"
+},
+{
+  "asset": "PNGPGN",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS6C5.png"
 }
   ]
 }
