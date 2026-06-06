@@ -1,5 +1,5 @@
 {
-  "totalCards": 166,
+  "totalCards": 167,
   "holders": [
     {
       "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
@@ -106,16 +106,16 @@
       "uniqueCards": 20
     },
     {
+      "address": "1L1EBBB468hK4NKLMC8XqbbskPXc7U9EUD",
+      "uniqueCards": 16
+    },
+    {
       "address": "1866tuqUy65SuTadWpSFZt7NiHybUF4B7k",
       "uniqueCards": 16
     },
     {
       "address": "1parodyTHe9y2VHk8kZNMZBNTkPTwKj3r",
       "uniqueCards": 16
-    },
-    {
-      "address": "1L1EBBB468hK4NKLMC8XqbbskPXc7U9EUD",
-      "uniqueCards": 15
     },
     {
       "address": "13dNrtrrmAu4KJz3J7Bc2Zgjkjj1mCxmEY",
@@ -598,5 +598,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-06-06T17:47:33.083Z"
+  "updatedAt": "2026-06-06T19:43:01.045Z"
 }
