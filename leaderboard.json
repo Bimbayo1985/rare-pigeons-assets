@@ -3,7 +3,7 @@
   "holders": [
     {
       "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
-      "uniqueCards": 127
+      "uniqueCards": 128
     },
     {
       "address": "1K3wUPfs6b6EUNWFTrSPguwzTzWHd7UeWu",
@@ -218,11 +218,11 @@
       "uniqueCards": 5
     },
     {
-      "address": "19RfaWiQnoqkmbUSDosKymg4mALrNbN13p",
+      "address": "1P9b3c9mMwmpmPLQGDbAdzYxoe2gXUGrwJ",
       "uniqueCards": 5
     },
     {
-      "address": "1P9b3c9mMwmpmPLQGDbAdzYxoe2gXUGrwJ",
+      "address": "19RfaWiQnoqkmbUSDosKymg4mALrNbN13p",
       "uniqueCards": 5
     },
     {
@@ -602,5 +602,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-06-09T07:59:38.921Z"
+  "updatedAt": "2026-06-09T11:26:28.007Z"
 }
