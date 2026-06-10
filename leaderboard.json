@@ -1,5 +1,5 @@
 {
-  "totalCards": 170,
+  "totalCards": 171,
   "holders": [
     {
       "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
@@ -147,7 +147,7 @@
     },
     {
       "address": "14VhF5JGExMn4qkN2RiMqNvCwpqmFvbQaz",
-      "uniqueCards": 11
+      "uniqueCards": 12
     },
     {
       "address": "12xYPaWadCu7vWDm9p3s3nziVh75eDN1Bo",
@@ -606,5 +606,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-06-10T16:42:50.047Z"
+  "updatedAt": "2026-06-10T19:41:45.503Z"
 }
