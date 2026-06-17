@@ -709,6 +709,10 @@
 {
   "asset": "DRUIDPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS6C16.png"
+},
+{
+  "asset": "CHOOSEPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS6C17.jpg"
 }
   ]
 }
