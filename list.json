@@ -721,6 +721,14 @@
 {
   "asset": "CRASHPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/CRASHPGN.png"
+},
+{
+  "asset": "PGNHUNTER  ",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS6C19.jpg"
+},
+{
+  "asset": "PGNGENESIS",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS6C20.jpg"
 }
   ]
 }
