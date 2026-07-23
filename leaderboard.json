@@ -102,6 +102,10 @@
       "uniqueCards": 22
     },
     {
+      "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
+      "uniqueCards": 20
+    },
+    {
       "address": "1DJ64TSro9AmnV3RLZqBfnqtTFUUvmmWky",
       "uniqueCards": 20
     },
@@ -116,10 +120,6 @@
     {
       "address": "1L1EBBB468hK4NKLMC8XqbbskPXc7U9EUD",
       "uniqueCards": 17
-    },
-    {
-      "address": "17kHVHkMNnNKGZWvm2n8c9796Gu4n4G9gp",
-      "uniqueCards": 16
     },
     {
       "address": "1Mq8jAW43ULNgmq4esDZaNGTZasBC56ooz",
@@ -146,12 +146,12 @@
       "uniqueCards": 12
     },
     {
-      "address": "bc1qa76w4wr8l854mzuaes75hcy8d923sll06v6vwf",
+      "address": "14VhF5JGExMn4qkN2RiMqNvCwpqmFvbQaz",
       "uniqueCards": 11
     },
     {
-      "address": "14VhF5JGExMn4qkN2RiMqNvCwpqmFvbQaz",
-      "uniqueCards": 11
+      "address": "bc1qa76w4wr8l854mzuaes75hcy8d923sll06v6vwf",
+      "uniqueCards": 10
     },
     {
       "address": "1Lhoi43wAkTgei1WK5drpSF9V8Y76jnj89",
@@ -650,5 +650,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-07-23T13:09:02.678Z"
+  "updatedAt": "2026-07-23T15:37:22.369Z"
 }
