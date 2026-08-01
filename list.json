@@ -737,6 +737,10 @@
 {
   "asset": "MOTOPIGEON",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/MOTOPIGEON.png"
+},
+{
+  "asset": "GREYPIGEON",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C1.png"
 }
   ]
 }
