@@ -747,8 +747,12 @@
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C2.jpg"
 },
 {
-  "asset": "PARADISEPGN  ",
+  "asset": "PARADISEPGN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C3.jpeg"
+},
+{
+  "asset": "PIGEONFLAME",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C4.jpg"
 }
   ]
 }
