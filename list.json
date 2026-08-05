@@ -753,6 +753,10 @@
 {
   "asset": "PIGEONFLAME",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C4.jpg"
+},
+{
+  "asset": "PIGEONSTACK",
+  "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C5.jpg"
 }
   ]
 }
