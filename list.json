@@ -769,6 +769,26 @@
 {
   "asset": "PIGEONFUNN",
   "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/PIGEONFUNN.png"
+},
+{ 
+"asset": "PIGEONNOMAD",
+"image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C8.jpg"
+},
+{ 
+"asset": "PIGEONMSN", 
+"image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C9.jpg"
+},
+{ 
+"asset": "PGNAFROVIBE",
+"image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C10.jpg"
+},
+{
+"asset": "PGNINTENSIVE",
+"image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C11.jpg"
+},
+{ 
+"asset": "PIGEONOPS",
+"image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/pigeonS7C12.jpg"
 }
   ]
 }
