@@ -3,31 +3,31 @@
   "holders": [
     {
       "address": "1K3wUPfs6b6EUNWFTrSPguwzTzWHd7UeWu",
-      "uniqueCards": 160
+      "uniqueCards": 161
+    },
+    {
+      "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
+      "uniqueCards": 151
     },
     {
       "address": "13H79p5ePrVAkhTxqkvHS5bCc2fWrr4QoN",
       "uniqueCards": 151
     },
     {
-      "address": "1Gs25JCECtjRH2PaeeT5LTV9ZqSNHpVBv1",
-      "uniqueCards": 150
-    },
-    {
       "address": "14udFRS6AdnQNJZn9RZ1H3LtSqP7k2UeTC",
-      "uniqueCards": 104
+      "uniqueCards": 105
     },
     {
       "address": "13dNrtrrmAu4KJz3J7Bc2Zgjkjj1mCxmEY",
-      "uniqueCards": 91
+      "uniqueCards": 92
     },
     {
       "address": "1Aw8NkS7AzW6yQgnT4YmEzADj7LAPLnZ65",
-      "uniqueCards": 67
+      "uniqueCards": 68
     },
     {
       "address": "15yG8DX3QWEhKPCSxiHkZ4cmEda6ExnLyi",
-      "uniqueCards": 60
+      "uniqueCards": 61
     },
     {
       "address": "1BH9sBVQ645gx2D3pfkc95SSvvEXpFhw2N",
@@ -35,51 +35,51 @@
     },
     {
       "address": "1FnM7akSCD8G3fRQHCUEXRCfL35gptsPZB",
-      "uniqueCards": 43
+      "uniqueCards": 44
     },
     {
       "address": "138kNmWCdJxGUGUxMzgcjMpHVhqGaDrh1k",
-      "uniqueCards": 42
+      "uniqueCards": 43
     },
     {
       "address": "1PtyNjFBBCKhUQGbqN5nLLQuDbMaQRL7wF",
-      "uniqueCards": 42
+      "uniqueCards": 43
     },
     {
       "address": "1AkGM1vi7mQqLZdYa95RTPb5XcRiYrhTdy",
-      "uniqueCards": 41
+      "uniqueCards": 42
     },
     {
       "address": "1JDogZS6tQcSxwfxhv6XKKjcyicYA4Feev",
-      "uniqueCards": 40
+      "uniqueCards": 41
     },
     {
       "address": "178etygrwEeeyQso9we85rUqYZbkiqzL4A",
-      "uniqueCards": 38
+      "uniqueCards": 39
     },
     {
       "address": "1CZ2VVEnhFQHp1bmHd5WjGf7ERyKNQf4bg",
-      "uniqueCards": 38
+      "uniqueCards": 39
     },
     {
       "address": "15dvLyXTstk7nLJ4oUXtrKc9sqccdhzLzS",
-      "uniqueCards": 38
+      "uniqueCards": 39
     },
     {
       "address": "1Mqy489eEPBLn5P3ZjZJ1ZsDyLdGioSsaE",
-      "uniqueCards": 36
+      "uniqueCards": 37
     },
     {
       "address": "13j9aWM7hAJCgpFq2uWPUtJ36ZiCX139DG",
-      "uniqueCards": 35
+      "uniqueCards": 36
     },
     {
       "address": "1m8vd7FPHtS8fu6NQduCibfjCt3T8UPoz",
-      "uniqueCards": 33
+      "uniqueCards": 34
     },
     {
       "address": "1AwS3wRFNCoymKs69BXjAA4VfgWvuKvx4j",
-      "uniqueCards": 31
+      "uniqueCards": 32
     },
     {
       "address": "1Ma25Zk25MM1ig2VVrH8XWKT8GSVDsRPLz",
@@ -87,11 +87,11 @@
     },
     {
       "address": "115K3XMNkqwbagbxYzG7EsQoVxHGcfghM8",
-      "uniqueCards": 29
+      "uniqueCards": 30
     },
     {
       "address": "1Lo3TfYPqqJYJ95qS4cCTFXAb3Th67h8eN",
-      "uniqueCards": 29
+      "uniqueCards": 30
     },
     {
       "address": "1REWRDdmghyr1fPh9WvW8KAUJV46AcMj2",
@@ -103,15 +103,15 @@
     },
     {
       "address": "19gT5fW7HLVu44QzemvMuXA3giAXa1qsWU",
+      "uniqueCards": 21
+    },
+    {
+      "address": "1Mq8jAW43ULNgmq4esDZaNGTZasBC56ooz",
       "uniqueCards": 20
     },
     {
       "address": "1DJ64TSro9AmnV3RLZqBfnqtTFUUvmmWky",
       "uniqueCards": 20
-    },
-    {
-      "address": "1Mq8jAW43ULNgmq4esDZaNGTZasBC56ooz",
-      "uniqueCards": 19
     },
     {
       "address": "1L1EBBB468hK4NKLMC8XqbbskPXc7U9EUD",
@@ -123,11 +123,15 @@
     },
     {
       "address": "1BRiBEceoN3w9oCas2QBXbGJRRKNWvCHsF",
-      "uniqueCards": 16
+      "uniqueCards": 17
     },
     {
       "address": "bc1qkzn4cjhg59esvthmlg75gd9s6exhxg5gsz5pgp",
       "uniqueCards": 13
+    },
+    {
+      "address": "173cE6ScUFCmBLCqZeG18ij6r9KHRPbAjC",
+      "uniqueCards": 12
     },
     {
       "address": "15AaPbjutocUSnwECuVpF29sSF9DpvMbZd",
@@ -146,7 +150,15 @@
       "uniqueCards": 12
     },
     {
-      "address": "173cE6ScUFCmBLCqZeG18ij6r9KHRPbAjC",
+      "address": "1691c3ZYSNmJc3PJGnkex5fnFdsw34LH57",
+      "uniqueCards": 11
+    },
+    {
+      "address": "1M6arvapNSFrQ9M8j8A4Zea6HofwqbQLhR",
+      "uniqueCards": 11
+    },
+    {
+      "address": "1P7SQikMnHLnbHFKfJuEP3vpyq8KSeMYKe",
       "uniqueCards": 11
     },
     {
@@ -154,15 +166,15 @@
       "uniqueCards": 11
     },
     {
-      "address": "1691c3ZYSNmJc3PJGnkex5fnFdsw34LH57",
+      "address": "1KefzFQ7i8W72fQogJLMKWxriHafAXCZuZ",
       "uniqueCards": 10
     },
     {
-      "address": "1M6arvapNSFrQ9M8j8A4Zea6HofwqbQLhR",
+      "address": "1EZeMpwxUuBJ63B5WX1vohn4M2PDYDfgQh",
       "uniqueCards": 10
     },
     {
-      "address": "1P7SQikMnHLnbHFKfJuEP3vpyq8KSeMYKe",
+      "address": "bc1qhx06tknt7y6xajy4g6r3r2j2jxhf6yzz9jrlxj",
       "uniqueCards": 10
     },
     {
@@ -174,32 +186,20 @@
       "uniqueCards": 9
     },
     {
-      "address": "bc1qhx06tknt7y6xajy4g6r3r2j2jxhf6yzz9jrlxj",
-      "uniqueCards": 9
-    },
-    {
-      "address": "1KefzFQ7i8W72fQogJLMKWxriHafAXCZuZ",
-      "uniqueCards": 9
-    },
-    {
-      "address": "1EZeMpwxUuBJ63B5WX1vohn4M2PDYDfgQh",
-      "uniqueCards": 9
-    },
-    {
       "address": "1DDhrwpaNN7q9shfE8c1XbrvkAhEhz39wn",
       "uniqueCards": 9
     },
     {
       "address": "1JQiE7sYCfAxjkJvYinYWAAYokwb9hFawR",
+      "uniqueCards": 9
+    },
+    {
+      "address": "17hxupddtL5z3RusNNgUUmK1EQiCXUhe6z",
       "uniqueCards": 8
     },
     {
       "address": "1LWLicRBi9EPcdnkJ2w7FaMQfdZoEiFETd",
-      "uniqueCards": 7
-    },
-    {
-      "address": "17hxupddtL5z3RusNNgUUmK1EQiCXUhe6z",
-      "uniqueCards": 7
+      "uniqueCards": 8
     },
     {
       "address": "152sEjdAmoB3CZDbar8fnfX3q9z6akRrDX",
@@ -435,6 +435,10 @@
     },
     {
       "address": "1DGaau3xBytkfXxgaKcoa7GRmitdfoV7hu",
+      "uniqueCards": 2
+    },
+    {
+      "address": "1NfJnJdAdmm2rJCFW54NsAKqqTTMexCNJ3",
       "uniqueCards": 2
     },
     {
@@ -746,10 +750,6 @@
       "uniqueCards": 1
     },
     {
-      "address": "1NfJnJdAdmm2rJCFW54NsAKqqTTMexCNJ3",
-      "uniqueCards": 1
-    },
-    {
       "address": "bc1qfnapw9jp7702gm8vy9cge9pyff4mgzzuevt00t",
       "uniqueCards": 1
     },
@@ -766,5 +766,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-09-28T19:31:35.469Z"
+  "updatedAt": "2026-09-29T00:00:33.740Z"
 }
