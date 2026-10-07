@@ -126,6 +126,10 @@
       "uniqueCards": 17
     },
     {
+      "address": "1DDhrwpaNN7q9shfE8c1XbrvkAhEhz39wn",
+      "uniqueCards": 14
+    },
+    {
       "address": "bc1qkzn4cjhg59esvthmlg75gd9s6exhxg5gsz5pgp",
       "uniqueCards": 13
     },
@@ -139,10 +143,6 @@
     },
     {
       "address": "16xG9NoSKAbMhbAgnwhMv2iDx8RY9cf87X",
-      "uniqueCards": 12
-    },
-    {
-      "address": "1DDhrwpaNN7q9shfE8c1XbrvkAhEhz39wn",
       "uniqueCards": 12
     },
     {
@@ -774,5 +774,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-10-07T15:26:23.789Z"
+  "updatedAt": "2026-10-07T20:48:41.791Z"
 }
