@@ -78,12 +78,12 @@
       "uniqueCards": 36
     },
     {
-      "address": "1m8vd7FPHtS8fu6NQduCibfjCt3T8UPoz",
+      "address": "1AwS3wRFNCoymKs69BXjAA4VfgWvuKvx4j",
       "uniqueCards": 32
     },
     {
-      "address": "1AwS3wRFNCoymKs69BXjAA4VfgWvuKvx4j",
-      "uniqueCards": 32
+      "address": "1m8vd7FPHtS8fu6NQduCibfjCt3T8UPoz",
+      "uniqueCards": 31
     },
     {
       "address": "1Ma25Zk25MM1ig2VVrH8XWKT8GSVDsRPLz",
@@ -122,15 +122,15 @@
       "uniqueCards": 18
     },
     {
+      "address": "1DDhrwpaNN7q9shfE8c1XbrvkAhEhz39wn",
+      "uniqueCards": 18
+    },
+    {
       "address": "1parodyTHe9y2VHk8kZNMZBNTkPTwKj3r",
       "uniqueCards": 18
     },
     {
       "address": "1BRiBEceoN3w9oCas2QBXbGJRRKNWvCHsF",
-      "uniqueCards": 17
-    },
-    {
-      "address": "1DDhrwpaNN7q9shfE8c1XbrvkAhEhz39wn",
       "uniqueCards": 17
     },
     {
@@ -782,5 +782,5 @@
       "uniqueCards": 1
     }
   ],
-  "updatedAt": "2026-10-11T13:24:04.211Z"
+  "updatedAt": "2026-10-11T18:25:47.950Z"
 }
