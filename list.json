@@ -793,6 +793,10 @@
 { 
 "asset": "BARPIGEON",
 "image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/BARPIGEON.png"
+},
+{ 
+"asset": "XCPETSGEON",
+"image": "https://raw.githubusercontent.com/Bimbayo1985/rare-pigeons-assets/refs/heads/main/images/XCPETSGEON.png"
 }
-  ]
+]
 }
